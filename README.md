@@ -1,6 +1,6 @@
 # QGIS
 
-These scripts are to be run inside QGIS
+### These scripts are to be run inside QGIS
 
 CenterOfCircle: make sure a point layer along the circle is selected and that the id attribute of these points is numbered.
 
@@ -11,5 +11,7 @@ MakeParallel: Select two lines in a line feature that are roughly parallel and m
 ExtendLines: Extend a line some number of map units. Input length in a pop-up box.
 
 # Standard
+
+### Uses standard Python
 
 DownloadFromList: Batch download and unzip a set of Ohio 1.25" DEMs
