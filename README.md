@@ -10,6 +10,8 @@ MakeParallel: Select two lines in a line feature that are roughly parallel and m
 
 ExtendLines: Extend a line some number of map units. Input length in a pop-up box.
 
+PointToLineDistance: From a set of points, finds the minimum distance from the points to the line.
+
 # Standard
 
 ### Uses standard Python
