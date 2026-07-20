@@ -125,8 +125,8 @@ crs_authid = point_layer.crs().authid()
 temp_layer = QgsVectorLayer("None?crs={}".format(crs_authid), OUTPUT_LAYER_NAME, "memory")
 temp_provider = temp_layer.dataProvider()
 temp_provider.addAttributes([
-    QgsField("point_id", QVariant.LongLong),
-    QgsField("point_name", QVariant.String),
+    QgsField("id", QVariant.LongLong),
+    QgsField("name", QVariant.String),
     QgsField("distance", QVariant.Double),
 ])
 temp_layer.updateFields()
@@ -164,7 +164,7 @@ QgsProject.instance().addMapLayer(temp_layer)
 # ---------------------------------------------------------------------------
 if distances:
     avg_val = sum(distances) / len(distances)
-    mean_val = statistics.mean(distances)
+    medi_val = statistics.median(distances)
     stdev_val = statistics.stdev(distances) if len(distances) > 1 else 0.0
     max_val = max(distances)
     min_val = min(distances)
@@ -177,7 +177,7 @@ if distances:
     print("Points measured : {}".format(len(distances)))
     print("-" * 60)
     print("Average distance : {:.4f}".format(avg_val))
-    print("Mean distance    : {:.4f}".format(mean_val))
+    print("Median distance    : {:.4f}".format(medi_val))
     print("Std deviation    : {:.4f}".format(stdev_val))
     print("Maximum distance : {:.4f}".format(max_val))
     print("Minimum distance : {:.4f}".format(min_val))
